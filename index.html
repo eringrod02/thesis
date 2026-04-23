@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Thesis '26</title>
+    <style>
+        body{
+            margin: 0%;
+        }
+        .title{
+            position: absolute;
+            margin-top: 0%;
+            font-size: 70px;
+            font-family: 'rock salt';
+            color: rgb(7, 117, 7);
+            left: 32%;
+            top: 0%;
+        }
+        .vid1{
+            position: absolute;
+            left: 1%;
+            top: 0%;
+        }
+        .vid2{
+            position: absolute;
+            right: 1%;
+            top: 0%;
+        }
+        .vid3{
+            position: absolute;
+            right: 1%;
+            bottom: 0%;
+        }
+        .vid4{
+            position: absolute;
+            left: 1%;
+            bottom: 0%;
+        }
+        [data-typewriter]{
+            position: relative;
+            color: blue;
+            text-align: center;
+        }
+        .text{
+            position: absolute;
+            font-size: 75px;
+            color: rgb(81, 199, 81);
+            font-family: 'Caveat';
+            top: 15%;
+            left: 30%;
+            
+        }
+        .text2{
+            position: absolute;
+            font-size: 70px;
+            color: rgb(81, 199, 81);
+            font-family: 'Caveat';
+            bottom: 46%;
+            right: 2%;
+            z-index: 10;
+        }
+        .text3{
+            position: absolute;
+            font-size: 70px;
+            color: rgb(81, 199, 81);
+            font-family: 'Caveat';
+            left: 1%;
+            bottom: 0%;
+            z-index: 10;
+        }
+        .text4{
+            position: absolute;
+            font-size: 70px;
+            color: rgb(81, 199, 81);
+            font-family: 'Caveat';
+            left: 1%;
+            top: 39%;
+            z-index: 10;  
+        }
+        .text::after {
+            content: "|";
+            margin-left: 2px;
+            animation: blink 0.8s infinite;
+        }
+        .text2::after {
+            content: "|";
+            margin-left: 2px;
+            animation: blink 0.8s infinite;
+        }
+        .text3::after{
+            content: "|";
+            margin-left: 2px;
+            animation: blink 0.8s infinite;  
+        }
+        .text4::after{
+            content: "|";
+            margin-left: 2px;
+            animation: blink 0.8s infinite;  
+        }
+         @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<h1 class="title">4yrs @ LMU</h1>
+
+
+    <div class="text"></div>
+    <div class="text2"></div>
+    <div class="text3"></div>
+    <div class="text4"></div>
+
+
+<video autoplay muted loop playsinline width="460"  class="vid1" src="videos/video1.mp4"></video>
+<video autoplay muted loop playsinline width="600"  class="vid2" src="videos/video2.mp4"></video>
+<video autoplay muted loop playsinline width="600"  
+class="vid3" src="videos/video3.mp4"></video>
+<video autoplay muted loop playsinline width="430" class="vid4" src="videos/video4.mp4"></video>
+
+<script>
+const div = document.querySelector(".text");
+const div2 = document.querySelector(".text2");
+const div3 = document.querySelector(".text3");
+const div4 = document.querySelector(".text4");
+const text = "Hi hello can you see this?";
+const text2 = "Where is that typo??";
+const text3 = "It's alllll in the wrists";
+const text4 = "My hand huuurts :((((";
+
+function textTypingEffect(element, text, i = 0) {
+   if (i === 0){
+    element.textContent = "";
+   }
+    element.textContent += text[i];
+
+    if (i === text.length - 1) {
+        setTimeout(() => textTypingEffect(element, text, 0), 2000);
+        return;
+    }
+    setTimeout(() => textTypingEffect(element, text, i + 1), 50)   
+}
+
+textTypingEffect(div, text);
+textTypingEffect(div2, text2);
+textTypingEffect(div3, text3);
+textTypingEffect(div4, text4);
+</script>
+</body>
+</html>
